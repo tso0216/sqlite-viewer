@@ -1,0 +1,42 @@
+{
+  "name": "sqlite-lite-editor",
+  "displayName": "SQLite Lite Editor",
+  "description": "在 VS Code 內直接檢視與編輯 SQLite 檔案（瀏覽資料表、改儲存格、新增/刪除列、執行 SQL）",
+  "version": "0.2.0",
+  "publisher": "yentso",
+  "license": "MIT",
+  "icon": "icon.png",
+  "engines": {
+    "vscode": "^1.81.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "customEditors": [
+      {
+        "viewType": "sqliteLite.editor",
+        "displayName": "SQLite Lite Editor",
+        "selector": [
+          {
+            "filenamePattern": "*.sqlite"
+          },
+          {
+            "filenamePattern": "*.sqlite3"
+          },
+          {
+            "filenamePattern": "*.db"
+          },
+          {
+            "filenamePattern": "*.db3"
+          }
+        ],
+        "priority": "default"
+      }
+    ]
+  },
+  "dependencies": {
+    "sql.js": "1.13.0"
+  }
+}
